@@ -27,6 +27,7 @@ export class FeedbackComponent {
       comment: ['', Validators.maxLength(50)]
     });
   }
+
   onRatingChange(rating: string) {
     console.log('Rating changed to:', rating);
     this.feedbackForm.patchValue({ rating });
@@ -40,6 +41,16 @@ export class FeedbackComponent {
       console.log('Feedback submitted successfully');
     }
   }
+  getEmoji(rating: string): string {
+    const emojiMap = {
+      'poor': '🙁',
+      'okay': '😐',
+      'good': '🙂',
+      'impressive': '😄'
+    };
+    return emojiMap[rating as keyof typeof emojiMap];
+  }
+
 
   // startNewFeedback() {
   //   this.showThankYouMessage = false;

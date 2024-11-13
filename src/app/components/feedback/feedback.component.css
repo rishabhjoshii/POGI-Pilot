@@ -11,6 +11,10 @@
 .sample2 {
   font-family: "Noto Sans", sans-serif;
 }
+.host {
+  font-family: "Host Grotesk", sans-serif;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
