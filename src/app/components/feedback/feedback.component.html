@@ -81,11 +81,10 @@
               <div
                 class="absolute inset-0 flex flex-col items-center justify-center gap-2"
               >
-                <div
-                  class="text-4xl transition-transform group-hover:scale-110"
-                >
-                  {{ getEmoji(option.value) }}
-                </div>
+                <img
+                  class="text-4xl transition-transform group-hover:scale-110 w-12 h-12"
+                  [src]="'../../../assets/emoji/' + getEmoji(option.value)"
+                />
                 <!-- <span class="text-sm font-semibold text-gray-600">{{
                   option.label
                 }}</span> -->
@@ -205,11 +204,10 @@
               <div
                 class="absolute inset-0 flex flex-col items-center justify-center gap-2"
               >
-                <div
-                  class="text-4xl transition-transform group-hover:scale-110"
-                >
-                  {{ getEmoji(option.value) }}
-                </div>
+                <img
+                  class="text-4xl transition-transform group-hover:scale-110 w-12 h-12"
+                  [src]="'../../../assets/emoji/' + getEmoji(option.value)"
+                />
                 <span class="text-sm font-semibold text-gray-600">{{
                   option.label
                 }}</span>

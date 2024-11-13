@@ -43,10 +43,10 @@ export class FeedbackComponent {
   }
   getEmoji(rating: string): string {
     const emojiMap = {
-      'poor': '🙁',
-      'okay': '😐',
-      'good': '🙂',
-      'impressive': '😄'
+      'poor': 'poor.svg',
+      'okay': 'okay.svg',
+      'good': 'good.svg',
+      'impressive': 'impressive.svg'
     };
     return emojiMap[rating as keyof typeof emojiMap];
   }
