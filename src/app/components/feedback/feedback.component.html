@@ -1,33 +1,41 @@
-<!-- feedback.component.html -->
+<!-- Sample 1 -->
 <div class="min-h-screen flex items-center justify-center p-4 font-montserrat">
-  <div class="background w-full h-full absolute -z-10">
-  </div>
+  <div class="background w-full h-full absolute -z-10"></div>
   <div class="w-full max-w-2xl">
     <!-- Thank You Message -->
-    <div *ngIf="showThankYouMessage" 
-         class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 text-center animate-fadeIn">
+    <div
+      *ngIf="showThankYouMessage"
+      class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 text-center animate-fadeIn"
+    >
       <div class="mb-8">
         <!-- Checkmark Icon -->
-        <div class="mx-auto w-20 h-20 rounded-full bg-teal-100 flex items-center justify-center mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" 
-               class="h-12 w-12 text-teal-600" 
-               fill="none" 
-               viewBox="0 0 24 24" 
-               stroke="currentColor">
-            <path stroke-linecap="round" 
-                  stroke-linejoin="round" 
-                  stroke-width="2" 
-                  d="M5 13l4 4L19 7" />
+        <div
+          class="mx-auto w-20 h-20 rounded-full bg-teal-100 flex items-center justify-center mb-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-12 w-12 text-teal-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
           </svg>
         </div>
-        
+
         <h2 class="text-3xl font-bold text-teal-600 mb-4">
           Thank You for Your Feedback!
         </h2>
-        
+
         <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-          We greatly appreciate you taking the time to share your thoughts with us. 
-          Your feedback is invaluable in helping us improve and provide better service.
+          We greatly appreciate you taking the time to share your thoughts with
+          us. Your feedback is invaluable in helping us improve and provide
+          better service.
         </p>
       </div>
 
@@ -39,37 +47,51 @@
     </div>
 
     <!-- Feedback Form -->
-    <div *ngIf="!showThankYouMessage" class="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+    <div
+      *ngIf="!showThankYouMessage"
+      class="bg-white rounded-2xl shadow-2xl p-8 md:p-10"
+    >
       <h1 class="text-3xl md:text-4xl font-bold text-teal-600 text-center mb-4">
         Share Your Feedback
       </h1>
-      
+
       <p class="text-gray-600 text-center mb-8">
-        We value your input! Please take a moment to share your thoughts about your recent interaction.
+        We value your input! Please take a moment to share your thoughts about
+        your recent interaction.
       </p>
 
-      <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="space-y-8">
+      <form
+        [formGroup]="feedbackForm"
+        (ngSubmit)="onSubmit()"
+        class="space-y-8"
+      >
         <div class="space-y-4">
           <h2 class="text-xl font-semibold text-teal-600">
             How would you rate this interaction?
           </h2>
-          
+
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <button
               *ngFor="let option of ratingOptions"
               type="button"
-              [class]="'w-full px-4 py-3 rounded-lg font-semibold transition-all duration-300 border-2 ' +
-                       (feedbackForm.get('rating')?.value === option.value ?
-                       'bg-teal-600 text-white border-teal-600' :
-                       'border-teal-600 text-teal-600 hover:bg-teal-50')"
-              (click)="onRatingChange(option.value)">
+              [class]="
+                'w-full px-4 py-3 rounded-lg font-semibold transition-all duration-300 border-2 ' +
+                (feedbackForm.get('rating')?.value === option.value
+                  ? 'bg-teal-600 text-white border-teal-600'
+                  : 'border-teal-600 text-teal-600 hover:bg-teal-50')
+              "
+              (click)="onRatingChange(option.value)"
+            >
               {{ option.label }}
             </button>
           </div>
         </div>
 
         <div class="space-y-2">
-          <label for="comment" class="block text-lg font-semibold text-teal-600">
+          <label
+            for="comment"
+            class="block text-lg font-semibold text-teal-600"
+          >
             Additional Comments
           </label>
           <textarea
@@ -84,9 +106,355 @@
         <button
           type="submit"
           [disabled]="!feedbackForm.valid"
-          class="w-full px-6 py-4 bg-coral-500 hover:bg-coral-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors duration-300 text-lg">
+          class="w-full px-6 py-4 bg-coral-500 hover:bg-coral-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors duration-300 text-lg"
+        >
           Submit Feedback
         </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Sample 2-->
+<div class="min-h-screen flex items-center justify-center p-4 sample1">
+  <div class="background w-full h-full absolute -z-10 bg-[#98FF98]"></div>
+  <div class="w-full max-w-2xl">
+    <!-- Thank You Message -->
+    <div
+      *ngIf="showThankYouMessage"
+      class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 text-center animate-fadeIn"
+    >
+      <div class="mb-8">
+        <!-- Checkmark Icon -->
+        <div
+          class="mx-auto w-20 h-20 rounded-full bg-[#98FF98] flex items-center justify-center mb-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-12 w-12 text-[#333333]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+
+        <h2 class="text-3xl font-bold text-[#333333] mb-4">
+          Thank You for Your Feedback!
+        </h2>
+
+        <p class="text-[#333333] text-lg mb-6 leading-relaxed">
+          We greatly appreciate you taking the time to share your thoughts with
+          us. Your feedback is invaluable in helping us improve and provide
+          better service.
+        </p>
+      </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div
+      *ngIf="!showThankYouMessage"
+      class="bg-white rounded-2xl shadow-2xl p-8 md:p-10"
+    >
+      <h1
+        class="text-3xl md:text-4xl font-bold text-[#333333] text-center mb-4"
+      >
+        Share Your Feedback
+      </h1>
+
+      <p class="text-[#333333] text-center mb-8">
+        We value your input! Please take a moment to share your thoughts about
+        your recent interaction.
+      </p>
+
+      <form
+        [formGroup]="feedbackForm"
+        (ngSubmit)="onSubmit()"
+        class="space-y-8"
+      >
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-[#333333]">
+            How would you rate this interaction?
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <button
+              *ngFor="let option of ratingOptions"
+              type="button"
+              [class]="
+                'w-full px-4 py-3 rounded-lg font-semibold transition-all duration-300 border-2 ' +
+                (feedbackForm.get('rating')?.value === option.value
+                  ? 'bg-[#333333] text-white border-[#333333]'
+                  : 'border-[#333333] text-[#333333] hover:bg-[#98FF98]')
+              "
+              (click)="onRatingChange(option.value)"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label
+            for="comment"
+            class="block text-lg font-semibold text-[#333333]"
+          >
+            Additional Comments
+          </label>
+          <textarea
+            id="comment"
+            formControlName="comment"
+            rows="4"
+            class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#333333] focus:ring-1 focus:ring-[#333333] transition-colors duration-300 resize-vertical placeholder-gray-400"
+            placeholder="Please share your thoughts here..."
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="!feedbackForm.valid"
+          class="w-full px-6 py-4 bg-[#FF8C42] hover:bg-[#ff7a24] disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors duration-300 text-lg"
+        >
+          Submit Feedback
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Sample 3 -->
+<div class="min-h-screen flex items-center justify-center p-4 sample2">
+  <div class="background w-full h-full absolute -z-10 bg-[#F5F5DC]"></div>
+  <div class="w-full max-w-2xl">
+    <!-- Thank You Message -->
+    <div
+      *ngIf="showThankYouMessage"
+      class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 text-center animate-fadeIn"
+    >
+      <div class="mb-8">
+        <!-- Checkmark Icon -->
+        <div
+          class="mx-auto w-20 h-20 rounded-full bg-[#228B22]/10 flex items-center justify-center mb-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-12 w-12 text-[#228B22]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+
+        <h2 class="text-3xl font-bold text-[#228B22] mb-4">
+          Thank You for Your Feedback!
+        </h2>
+
+        <p class="text-[#228B22]/80 text-lg mb-6 leading-relaxed">
+          We greatly appreciate you taking the time to share your thoughts with
+          us. Your feedback is invaluable in helping us improve and provide
+          better service.
+        </p>
+      </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div
+      *ngIf="!showThankYouMessage"
+      class="bg-white rounded-2xl shadow-2xl p-8 md:p-10"
+    >
+      <h1
+        class="text-3xl md:text-4xl font-bold text-[#228B22] text-center mb-4"
+      >
+        Share Your Feedback
+      </h1>
+
+      <p class="text-[#228B22]/80 text-center mb-8">
+        We value your input! Please take a moment to share your thoughts about
+        your recent interaction.
+      </p>
+
+      <form
+        [formGroup]="feedbackForm"
+        (ngSubmit)="onSubmit()"
+        class="space-y-8"
+      >
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-[#228B22]">
+            How would you rate this interaction?
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <button
+              *ngFor="let option of ratingOptions"
+              type="button"
+              [class]="
+                'w-full px-4 py-3 rounded-lg font-semibold transition-all duration-300 border-2 ' +
+                (feedbackForm.get('rating')?.value === option.value
+                  ? 'bg-[#228B22] text-white border-[#228B22]'
+                  : 'border-[#228B22] text-[#228B22] hover:bg-[#228B22]/10')
+              "
+              (click)="onRatingChange(option.value)"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label
+            for="comment"
+            class="block text-lg font-semibold text-[#228B22]"
+          >
+            Additional Comments
+          </label>
+          <textarea
+            id="comment"
+            formControlName="comment"
+            rows="4"
+            class="w-full px-4 py-3 rounded-lg border-2 border-[#228B22]/20 focus:border-[#228B22] focus:ring-1 focus:ring-[#228B22] transition-colors duration-300 resize-vertical placeholder-[#228B22]/50"
+            placeholder="Please share your thoughts here..."
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="!feedbackForm.valid"
+          class="w-full px-6 py-4 bg-[#FFD700] hover:bg-[#FFD700]/80 disabled:bg-gray-300 disabled:cursor-not-allowed text-[#228B22] font-bold rounded-lg transition-colors duration-300 text-lg shadow-md"
+        >
+          Submit Feedback
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Sample 4 -->
+<div
+  class="min-h-screen flex items-center justify-center p-4 font-lato"
+  style="font-family: 'Lato', sans-serif"
+>
+  <div class="background w-full h-full absolute -z-10 bg-[#FFE5D9]"></div>
+  <div class="w-full max-w-2xl">
+    <!-- Thank You Message -->
+    <div
+      *ngIf="showThankYouMessage"
+      class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 text-center animate-fadeIn"
+    >
+      <div class="mb-8">
+        <!-- Checkmark Icon -->
+        <div
+          class="mx-auto w-20 h-20 rounded-full bg-[#800000]/10 flex items-center justify-center mb-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-12 w-12 text-[#800000]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+
+        <h2 class="text-3xl font-bold text-[#800000] mb-4">
+          Thank You for Your Feedback!
+        </h2>
+
+        <p class="text-[#800000]/80 text-lg mb-6 leading-relaxed">
+          We greatly appreciate you taking the time to share your thoughts with
+          us. Your feedback is invaluable in helping us improve and provide
+          better service.
+        </p>
+      </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div
+      *ngIf="!showThankYouMessage"
+      class="bg-white rounded-2xl shadow-2xl p-8 md:p-10"
+    >
+      <h1
+        class="text-3xl md:text-4xl font-bold text-[#800000] text-center mb-4"
+      >
+        Share Your Feedback
+      </h1>
+
+      <p class="text-[#800000]/80 text-center mb-8">
+        We value your input! Please take a moment to share your thoughts about
+        your recent interaction.
+      </p>
+
+      <form
+        [formGroup]="feedbackForm"
+        (ngSubmit)="onSubmit()"
+        class="space-y-8"
+      >
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-[#800000]">
+            How would you rate this interaction?
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <button
+              *ngFor="let option of ratingOptions"
+              type="button"
+              [class]="
+                'w-full px-4 py-3 rounded-lg font-semibold transition-all duration-300 border-2 ' +
+                (feedbackForm.get('rating')?.value === option.value
+                  ? 'bg-[#800000] text-white border-[#800000]'
+                  : 'border-[#800000] text-[#800000] hover:bg-[#FFE5D9]')
+              "
+              (click)="onRatingChange(option.value)"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label
+            for="comment"
+            class="block text-lg font-semibold text-[#800000]"
+          >
+            Additional Comments
+          </label>
+          <textarea
+            id="comment"
+            formControlName="comment"
+            rows="4"
+            class="w-full px-4 py-3 rounded-lg border-2 border-[#800000]/20 focus:border-[#800000] focus:ring-1 focus:ring-[#800000] transition-colors duration-300 resize-vertical placeholder-[#800000]/50"
+            placeholder="Please share your thoughts here..."
+          ></textarea>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-x-0 -top-4 h-px bg-[#808000]/30"></div>
+          <button
+            type="submit"
+            [disabled]="!feedbackForm.valid"
+            class="w-full mt-6 px-6 py-4 bg-[#808000] hover:bg-[#808000]/90 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold rounded-lg transition-colors duration-300 text-lg shadow-md"
+          >
+            Submit Feedback
+          </button>
+        </div>
       </form>
     </div>
   </div>
