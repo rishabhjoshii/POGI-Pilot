@@ -1,0 +1,189 @@
+<div class="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+  <!-- Page Header -->
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Our Team</h1>
+
+    <!-- Current User Card -->
+    <div class="mb-12">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">You</h2>
+      <div class="bg-white rounded-xl shadow-md p-6 border-2 border-blue-200">
+        <div class="flex items-start gap-6">
+          <!-- Profile Picture Section -->
+          <div class="relative">
+            <img
+              [src]="currentUser.profilePicture"
+              [alt]="currentUser.name"
+              class="w-24 h-24 rounded-full object-cover ring-4 ring-blue-50"
+            />
+            <div
+              [class]="
+                'absolute bottom-0 right-0 h-4 w-4 rounded-full ring-2 ring-white ' +
+                getStatusColor(currentUser.status)
+              "
+              [title]="currentUser.status"
+            ></div>
+          </div>
+
+          <!-- User Info Section -->
+          <div class="flex-1">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">
+                  {{ currentUser.name }}
+                </h3>
+                <p class="text-gray-600">{{ currentUser.designation }}</p>
+              </div>
+              <!-- Social Links -->
+              <div class="flex gap-3">
+                <a
+                  *ngIf="currentUser.socialLinks?.linkedin"
+                  [href]="currentUser.socialLinks.linkedin"
+                  class="text-gray-400 hover:text-blue-500"
+                >
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a
+                  *ngIf="currentUser.socialLinks?.github"
+                  [href]="currentUser.socialLinks.github"
+                  class="text-gray-400 hover:text-gray-700"
+                >
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a
+                  *ngIf="currentUser.socialLinks?.twitter"
+                  [href]="currentUser.socialLinks.twitter"
+                  class="text-gray-400 hover:text-blue-400"
+                >
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="mt-4 grid grid-cols-2 gap-4">
+              <div>
+                <p class="text-sm text-gray-500">Email</p>
+                <p class="text-gray-700">{{ currentUser.email }}</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Department</p>
+                <p class="text-gray-700">{{ currentUser.department }}</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Location</p>
+                <p class="text-gray-700">{{ currentUser.location }}</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Current Project</p>
+                <p class="text-gray-700">{{ currentUser.currentProject }}</p>
+              </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="mt-4">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  *ngFor="let skill of currentUser.skills"
+                  class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm"
+                >
+                  {{ skill }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Members Section -->
+    <div>
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">Team Members</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Team Member Card -->
+        <div
+          *ngFor="let member of teamMembers"
+          class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+        >
+          <div class="flex items-start gap-4">
+            <!-- Profile Picture -->
+            <div class="relative">
+              <img
+                [src]="member.profilePicture"
+                [alt]="member.name"
+                class="w-16 h-16 rounded-full object-cover"
+              />
+              <div
+                [class]="
+                  'absolute bottom-0 right-0 h-3 w-3 rounded-full ring-2 ring-white ' +
+                  getStatusColor(member.status)
+                "
+                [title]="member.status"
+              ></div>
+            </div>
+
+            <!-- Member Info -->
+            <div class="flex-1">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-semibold text-gray-900">{{ member.name }}</h3>
+                  <p class="text-sm text-gray-600">{{ member.designation }}</p>
+                </div>
+              </div>
+
+              <!-- Additional Info -->
+              <div class="mt-3 space-y-1 text-sm">
+                <p class="text-gray-600">
+                  {{ member.department }} • {{ member.location }}
+                </p>
+                <p class="text-gray-600">{{ member.currentProject }}</p>
+              </div>
+
+              <!-- Skills -->
+              <div class="mt-3">
+                <div class="flex flex-wrap gap-1">
+                  <span
+                    *ngFor="let skill of member.skills.slice(0, 3)"
+                    class="px-2 py-0.5 bg-gray-50 text-gray-600 rounded-full text-xs"
+                  >
+                    {{ skill }}
+                  </span>
+                  <span
+                    *ngIf="member.skills.length > 3"
+                    class="px-2 py-0.5 bg-gray-50 text-gray-600 rounded-full text-xs"
+                  >
+                    +{{ member.skills.length - 3 }} more
+                  </span>
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="mt-3 flex gap-2">
+                <a
+                  *ngIf="member.socialLinks?.linkedin"
+                  [href]="member.socialLinks.linkedin"
+                  class="text-gray-400 hover:text-blue-500"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  *ngIf="member.socialLinks?.github"
+                  [href]="member.socialLinks.github"
+                  class="text-gray-400 hover:text-gray-700"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  *ngIf="member.socialLinks?.twitter"
+                  [href]="member.socialLinks.twitter"
+                  class="text-gray-400 hover:text-blue-400"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

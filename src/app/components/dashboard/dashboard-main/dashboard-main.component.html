@@ -1,0 +1,199 @@
+<!-- Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+  <!-- Urgent Feedbacks Card -->
+  <div
+    class="bg-white rounded-lg shadow p-6 border-l-4 border-red-500 card-hover"
+  >
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-gray-600">Urgent Feedbacks</p>
+        <p class="text-2xl font-bold text-red-600">12</p>
+        <div class="mt-2 flex items-center text-sm text-red-600">
+          <i class="fas fa-arrow-up mr-1"></i>
+          <span>4 more than yesterday</span>
+        </div>
+      </div>
+      <div
+        class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center"
+      >
+        <i class="fas fa-exclamation-circle text-red-500 text-xl"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Due This Week Card -->
+  <div
+    class="bg-white rounded-lg shadow p-6 border-l-4 border-orange-500 card-hover"
+  >
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-gray-600">Due This Week</p>
+        <p class="text-2xl font-bold text-orange-600">28</p>
+        <div class="mt-2 flex items-center text-sm text-orange-600">
+          <i class="fas fa-clock mr-1"></i>
+          <span>Next 7 days</span>
+        </div>
+      </div>
+      <div
+        class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center"
+      >
+        <i class="fas fa-calendar text-orange-500 text-xl"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Total Pending Card -->
+  <div
+    class="bg-white rounded-lg shadow p-6 border-l-4 border-blue-500 card-hover"
+  >
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-gray-600">Total Pending</p>
+        <p class="text-2xl font-bold text-blue-600">57</p>
+        <div class="mt-2 flex items-center text-sm text-blue-600">
+          <i class="fas fa-chart-line mr-1"></i>
+          <span>View analytics</span>
+        </div>
+      </div>
+      <div
+        class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center"
+      >
+        <i class="fas fa-list-check text-blue-500 text-xl"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Feedback List Section -->
+<div class="bg-white rounded-lg shadow">
+  <!-- List Header -->
+  <div class="p-6 border-b">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-xl font-bold">Pending Feedbacks</h2>
+      <div class="flex gap-3">
+        <!-- Filter Dropdown -->
+        <div class="relative">
+          <button
+            class="px-4 py-2 text-sm bg-gray-100 rounded-lg flex items-center gap-2 hover:bg-gray-200"
+          >
+            <i class="fas fa-filter"></i>
+            Filter
+            <i class="fas fa-chevron-down ml-2"></i>
+          </button>
+        </div>
+        <!-- Sort Dropdown -->
+        <div class="relative">
+          <button
+            class="px-4 py-2 text-sm bg-gray-100 rounded-lg flex items-center gap-2 hover:bg-gray-200"
+          >
+            <i class="fas fa-sort"></i>
+            Sort
+            <i class="fas fa-chevron-down ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback Items -->
+  <div class="divide-y">
+    <!-- Urgent Feedback Item -->
+    <div class="p-6 hover:bg-gray-50 transition-colors duration-150">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div
+            class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-medium"
+          >
+            ST
+          </div>
+          <div>
+            <p class="font-medium">Sarah Thompson</p>
+            <p class="text-sm text-gray-600">VP of Engineering</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span
+            class="px-3 py-1 rounded-full text-sm bg-red-100 text-red-800 flex items-center gap-1"
+          >
+            <i class="fas fa-clock-rotate-left text-xs"></i>
+            Due Today
+          </span>
+          <button
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors duration-150"
+          >
+            Provide Feedback
+          </button>
+        </div>
+      </div>
+    </div>
+    <app-feedback-card type="today" />
+    <!-- Due Soon Feedback Item -->
+    <div class="p-6 hover:bg-gray-50 transition-colors duration-150">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div
+            class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-medium"
+          >
+            MJ
+          </div>
+          <div>
+            <p class="font-medium">Mike Johnson</p>
+            <p class="text-sm text-gray-600">Development Team Lead</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span
+            class="px-3 py-1 rounded-full text-sm bg-orange-100 text-orange-800 flex items-center gap-1"
+          >
+            <i class="fas fa-clock-rotate-left text-xs"></i>
+            Due in 3 days
+          </span>
+          <button
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors duration-150"
+          >
+            Provide Feedback
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Regular Feedback Item -->
+    <div class="p-6 hover:bg-gray-50 transition-colors duration-150">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div
+            class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-medium"
+          >
+            AL
+          </div>
+          <div>
+            <p class="font-medium">Alex Lee</p>
+            <p class="text-sm text-gray-600">Software Engineer</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span
+            class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 flex items-center gap-1"
+          >
+            <i class="fas fa-clock-rotate-left text-xs"></i>
+            Due next week
+          </span>
+          <button
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors duration-150"
+          >
+            Provide Feedback
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load More -->
+  <div class="p-6 text-center border-t">
+    <button
+      class="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-150"
+    >
+      Load More Feedbacks
+    </button>
+  </div>
+</div>

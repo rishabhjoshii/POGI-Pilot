@@ -1,0 +1,45 @@
+<div class="p-6 hover:bg-gray-50 transition-colors duration-150">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div
+        class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-medium"
+      >
+        ST
+      </div>
+      <div>
+        <p class="font-medium">Sarah Thompson</p>
+        <p class="text-sm text-gray-600">VP of Engineering</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      @if (type) {@switch (type) { @case ('today') {
+      <span
+        class="px-3 py-1 rounded-full text-sm bg-red-100 text-red-800 flex items-center gap-1"
+      >
+        <i class="fas fa-clock-rotate-left text-xs"></i>
+        Due Today
+      </span>
+      } @case ('days') {
+      <span
+        class="px-3 py-1 rounded-full text-sm bg-orange-100 text-orange-800 flex items-center gap-1"
+      >
+        <i class="fas fa-clock-rotate-left text-xs"></i>
+        Due in 3 days
+      </span>
+      } @default {
+      <span
+        class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 flex items-center gap-1"
+      >
+        <i class="fas fa-clock-rotate-left text-xs"></i>
+        Due next week
+      </span>
+      } } }
+      <a
+        [routerLink]="['/feedback']"
+        class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors duration-150"
+      >
+        Provide Feedback
+      </a>
+    </div>
+  </div>
+</div>
