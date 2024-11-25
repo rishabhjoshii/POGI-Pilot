@@ -1,0 +1,62 @@
+<div class="login-page">
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Please enter your details</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <span class="material-symbols-rounded">person</span>
+          <input type="email" placeholder="Email" formControlName="email" />
+          <div
+            class="error"
+            *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']"
+          >
+            Email is required
+          </div>
+          <div
+            class="error"
+            *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']"
+          >
+            Please enter a valid email
+          </div>
+        </div>
+
+        <div class="input-group">
+          <span class="material-symbols-rounded">lock</span>
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <span
+            class="material-symbols-rounded password-toggle"
+            (click)="togglePassword()"
+          >
+            {{ showPassword ? "visibility_off" : "visibility" }}
+          </span>
+          <div
+            class="error"
+            *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+          >
+            Password is required
+          </div>
+        </div>
+
+        <div class="options">
+          <label>
+            <input type="checkbox" formControlName="rememberMe" />
+            Remember me
+          </label>
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit" [disabled]="!loginForm.valid">Sign In</button>
+
+        <p class="signup-link">
+          Don't have an account? <a href="#">Sign up</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@ import { DashboardMainComponent } from './components/dashboard/dashboard-main/da
 import { MyFeedbacksComponent } from './components/dashboard/my-feedbacks/my-feedbacks.component';
 import { DashboardTeamComponent } from './components/dashboard/dashboard-team/dashboard-team.component';
 import { ReportsComponent } from './components/dashboard/reports/reports.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
      {
@@ -34,5 +35,8 @@ export const routes: Routes = [
                     component: ReportsComponent
                }
           ]
+     }, {
+          path: 'login',
+          component: LoginComponent
      }
 ];
