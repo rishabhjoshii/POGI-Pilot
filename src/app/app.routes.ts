@@ -6,11 +6,12 @@ import { MyFeedbacksComponent } from './components/dashboard/my-feedbacks/my-fee
 import { DashboardTeamComponent } from './components/dashboard/dashboard-team/dashboard-team.component';
 import { ReportsComponent } from './components/dashboard/reports/reports.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 export const routes: Routes = [
      {
           path: '',
-          redirectTo: 'feedback',
+          redirectTo: '/login',
           pathMatch: 'full'
      },
      {
@@ -38,5 +39,9 @@ export const routes: Routes = [
      }, {
           path: 'login',
           component: LoginComponent
+     },
+     {
+          path: 'signup',
+          component: SignupComponent
      }
 ];

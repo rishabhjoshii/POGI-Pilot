@@ -1,0 +1,123 @@
+<div class="login-page">
+    <div class="login-container">
+      <div class="login-box">
+        <h2>Create Account</h2>
+        <p class="subtitle">Please fill in your details</p>
+  
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <div class="input-group">
+            <span class="material-symbols-rounded">person</span>
+            <input type="text" placeholder="Full Name" formControlName="fullName" />
+            <div
+              class="error"
+              *ngIf="signupForm.get('fullName')?.touched && signupForm.get('fullName')?.errors?.['required']"
+            >
+              Full Name is required
+            </div>
+            <div
+              class="error"
+              *ngIf="signupForm.get('fullName')?.touched && signupForm.get('fullName')?.errors?.['minlength']"
+            >
+              Full Name must be at least 2 characters
+            </div>
+          </div>
+  
+          <div class="input-group">
+            <span class="material-symbols-rounded">email</span>
+            <input type="email" placeholder="Email" formControlName="email" />
+            <div
+              class="error"
+              *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.errors?.['required']"
+            >
+              Email is required
+            </div>
+            <div
+              class="error"
+              *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.errors?.['email']"
+            >
+              Please enter a valid email
+            </div>
+          </div>
+  
+          <div class="input-group">
+            <span class="material-symbols-rounded">lock</span>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              placeholder="Password"
+              formControlName="password"
+            />
+            <span
+              class="material-symbols-rounded password-toggle"
+              (click)="togglePassword('password')"
+            >
+              {{ showPassword ? "visibility_off" : "visibility" }}
+            </span>
+            <div
+              class="error"
+              *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['required']"
+            >
+              Password is required
+            </div>
+            <div
+              class="error"
+              *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['minlength']"
+            >
+              Password must be at least 8 characters
+            </div>
+            <div
+              class="error"
+              *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['pattern']"
+            >
+              Password must include letters, numbers, and special characters
+            </div>
+          </div>
+  
+          <div class="input-group">
+            <span class="material-symbols-rounded">lock</span>
+            <input
+              [type]="showConfirmPassword ? 'text' : 'password'"
+              placeholder="Confirm Password"
+              formControlName="confirmPassword"
+            />
+            <span
+              class="material-symbols-rounded password-toggle"
+              (click)="togglePassword('confirmPassword')"
+            >
+              {{ showConfirmPassword ? "visibility_off" : "visibility" }}
+            </span>
+            <div
+              class="error"
+              *ngIf="signupForm.get('confirmPassword')?.touched && signupForm.get('confirmPassword')?.errors?.['required']"
+            >
+              Please confirm your password
+            </div>
+            <div
+              class="error"
+              *ngIf="signupForm.get('confirmPassword')?.touched && signupForm.get('confirmPassword')?.errors?.['passwordMismatch']"
+            >
+              Passwords do not match
+            </div>
+          </div>
+  
+          <div class="options">
+            <label>
+              <input type="checkbox" formControlName="termsAccepted" />
+              I agree to the Terms and Conditions
+            </label>
+          </div>
+          <div
+            class="error terms-error"
+            *ngIf="signupForm.get('termsAccepted')?.touched && signupForm.get('termsAccepted')?.errors?.['required']"
+          >
+            You must accept the terms
+          </div>
+  
+          <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+  
+          <p class="signup-link">
+            Already have an account? <a routerLink="/login">Login</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>

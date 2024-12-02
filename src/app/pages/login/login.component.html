@@ -48,13 +48,13 @@
             <input type="checkbox" formControlName="rememberMe" />
             Remember me
           </label>
-          <a href="#" class="forgot-password">Forgot password?</a>
+          <a class="forgot-password">Forgot password?</a>
         </div>
 
         <button type="submit" [disabled]="!loginForm.valid">Sign In</button>
 
         <p class="signup-link">
-          Don't have an account? <a href="#">Sign up</a>
+          Don't have an account? <a routerLink="/signup">Sign up</a>
         </p>
       </form>
     </div>
